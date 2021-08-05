@@ -24,7 +24,7 @@ model, tokenizer = load_model()
 def get_gen():
     data = request.get_json()
 
-    if 'text' not in data or len(data['text']) == 0 or 'model' not in data:
+    if 'text' not in data or len(data['text']) == 0:
         abort(400)
     else:
         text = data['text']

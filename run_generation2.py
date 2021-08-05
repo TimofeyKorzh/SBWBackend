@@ -41,7 +41,7 @@ from transformers import (WEIGHTS_NAME, AdamW, get_linear_schedule_with_warmup, 
                    # level = logging.INFO)
 #logger = logging.getLogger(__name__)
 
-logger.add("req&res.log", format="{time} {level} {message}", level="INFO", encoding = "utf8")
+logger.add("reqres.log", format="{time} {level} {message}", level="INFO", encoding = "utf8")
 
 MAX_LENGTH = int(10000)  # Hardcoded max length to avoid infinite loop
 
@@ -187,7 +187,9 @@ def generate_text(model, tokenizer, padding_text=None, prompt='', model_type='gp
         #print(text)
         if prompt:
             break
-    logger.info(prompt+text)
+    text =  text.rsplit(' ', 1)[0] + " "
+    logger.info("req: " + prompt)
+    logger.info("res: " + text)
     return text
 
 

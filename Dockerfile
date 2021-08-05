@@ -10,7 +10,7 @@ RUN pip3 install torch==1.8.0+cpu -f https://download.pytorch.org/whl/torch_stab
 RUN apt-get install -y p7zip-full && apt-get install -y wget
 RUN mkdir output_yt
 RUN mkdir output_yt/m
-RUN wget https://cloud.feather.cloudns.cl/s/B9iYgYAYgan6fWD/download && 7z x download && mv checkpoint-3740000/* output_yt/m/ && rm download
+RUN wget https://cloud.monetka.name/s/B9iYgYAYgan6fWD/download && 7z x download && mv checkpoint-3740000/* output_yt/m/ && rm download
 ENV PYTHONIOENCODING=UTF-8
 ENTRYPOINT ["python3"]
 CMD ["app.py"]
