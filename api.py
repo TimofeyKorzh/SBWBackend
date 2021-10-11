@@ -1,3 +1,5 @@
+#!/usr/local/bin/python3
+# coding: utf8
 from fastapi import FastAPI
 app = FastAPI()
 from fastapi import FastAPI
