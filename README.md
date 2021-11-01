@@ -8,10 +8,12 @@ Use `/generate` POST method with payload like that:
 {"text": "Твайлайт Спаркл удивлённо ", "lenght": 40, "temperature": 1}
 ```
 To generate.
-Params are:
+Params of request are:
+```
 Input:
     text (str): input text
     length (int): lenght of generation in tokens
     temperature (float): "creativness" of generation
 Returns:
       str: generated text
+```
