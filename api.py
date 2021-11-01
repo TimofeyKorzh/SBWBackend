@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 # coding: utf8
 from fastapi import FastAPI
-app = FastAPI()
+
 from fastapi import FastAPI
 import nest_asyncio
 from pydantic import BaseModel
@@ -11,17 +11,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware import Middleware
 from starlette.middleware.cors import CORSMiddleware
 import uvicorn
-
 import numpy as np
-#import torch
-#np.random.seed(42)
-#torch.manual_seed(42)
-#from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
+app = FastAPI()
 device='cuda'
 
-#tok = GPT2Tokenizer.from_pretrained("content/weights_push_v_may")
-#model = GPT2LMHeadModel.from_pretrained("content/weights_push_v_may").to(device)
+
 model, tokenizer = load_model(no_cuda=False)
 
 def push(text: str, length: int, temperature: float):

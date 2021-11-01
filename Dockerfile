@@ -1,11 +1,12 @@
-FROM nvcr.io/nvidia/pytorch:19.12-py3
+#FROM nvcr.io/nvidia/pytorch:19.12-py3
+FROM pytorch/pytorch:1.8.1-cuda10.2-cudnn7-runtime
 RUN apt-get update -y
 #RUN apt-get install -y python3-pip python3-dev build-essential
 COPY . /app
 WORKDIR /app
 RUN pip install --upgrade pip
 RUN pip install --upgrade cython 
-RUN pip install --no-cache torch==1.8.1+cu102 -f https://download.pytorch.org/whl/torch_stable.html
+#RUN pip install --no-cache torch==1.8.1+cu102 -f https://download.pytorch.org/whl/torch_stable.html
 RUN pip install transformers==2.2
 #RUN pip install --ignore-installed certifi -r requirements.txt
 RUN pip install loguru
