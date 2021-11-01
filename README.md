@@ -15,5 +15,5 @@ Input:
     length (int): lenght of generation in tokens
     temperature (float): "creativness" of generation
 Returns:
-      str: generated text
+    str: generated text
 ```
